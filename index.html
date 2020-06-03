@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <script src="./Promise.js"></script> -->
+    <script>
+        // new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         reject(1)
+        //     });
+        // }).then(
+        //     (value) => {
+        //         console.log('onResolved',value);
+                
+        //     },
+        //     (reason) => {
+        //         console.log('onRejected',reason);
+        //         return 3
+        //     }
+        // ).then(
+        //     (value) => {
+        //         console.log('onResolved',value);
+                
+        //     },
+        //     (reason) => {
+        //         console.log('onRejected',reason);
+        //     }
+        // )
+        const p = new Promise((resolve,reject)=>{
+            // setTimeout(() => {
+                reject(1)
+            // }, 1000);
+        })
+
+        p.then((value)=>{
+            console.log('onResolved',this);
+        },function(reason){
+            console.log('onRejected',this);
+        })
+
+        p.then((value)=>{
+            console.log('onResolved2',value);
+        },function(reason){
+            console.log('onRejected2',this);
+        })
+    </script>
+</body>
+
+</html>
